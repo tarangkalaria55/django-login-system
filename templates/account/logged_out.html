@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block body_class %}
+  d-flex align-items-center py-4 bg-body-tertiary min-vh-100 min-vw-100
+{% endblock body_class %}
+
+{% block content %}
+  <main class="w-100 m-auto" style="width: 40rem!important;">
+    <p class="text-center">Thanks for spending some quality time with the web site today.</p>
+
+    <p class="text-center">
+      <a href="{% url 'login' %}">Log in again</a>
+    </p>
+  </main>
+{% endblock %}

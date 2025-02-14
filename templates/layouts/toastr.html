@@ -1,0 +1,15 @@
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags == 'success' or message.tags == 'info' or message.tags == 'warning' or message.tags == 'error' %}
+      <script type=text/javascript>
+				$(()=>{
+					toastr.{{ message.tags }}('{{ message }}')
+				})
+      </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}

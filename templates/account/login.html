@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+  Login
+{% endblock title %}
+
+
+{% block body_class %}
+  d-flex align-items-center py-4 bg-body-tertiary min-vh-100 min-vw-100
+{% endblock body_class %}
+
+{% block content %}
+  <main class="form-signin w-100 m-auto" style="width: 40rem!important;">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Login</legend>
+        {{ form|crispy }}
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Login</button>
+        <small class="text-muted ms-2">
+          <a href="{% url 'password_reset' %}">Forgot password?</a>
+        </small>
+      </div>
+    </form>
+  </main>
+{% endblock content %}
